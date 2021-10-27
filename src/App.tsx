@@ -3,10 +3,8 @@ import Header from './components/Header'
 import TitleHeader from './components/TitleHeader'
 import { styled } from '@compiled/react'
 import 'dayjs/locale/ko'
-import dayjs from 'dayjs'
 
 export default function App() {
-  dayjs.locale("ko");
   return (
     <Container>
       <Header/>
