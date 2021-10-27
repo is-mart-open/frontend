@@ -1,5 +1,3 @@
-# is-mart-open
+# is-mart-open/frontend
 
-오늘 대형마트 오픈하나요?
-
-[API](https://github.com/B4TT3RY/is-mart-open-api-elixir)
+오늘 마트 영업하나요?
