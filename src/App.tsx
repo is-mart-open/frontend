@@ -2,11 +2,14 @@ import MartButton from './components/MartButton'
 import Header from './components/Header'
 import TitleHeader from './components/TitleHeader'
 import { styled } from '@compiled/react'
+import 'dayjs/locale/ko'
+import dayjs from 'dayjs'
 
 export default function App() {
+  dayjs.locale("ko");
   return (
     <Container>
-      <Header />
+      <Header/>
       <TitleHeader title="오늘 갈 마트를 눌러주세요" />
       <div style={{overflow: 'auto', display: 'flex', width: '100vw', gap: '0.4rem'}}>
         <MartButton type="emart" title="이마트" />
