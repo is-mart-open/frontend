@@ -11,11 +11,11 @@ export default function App() {
       <Header/>
       <TitleHeader title="오늘 갈 마트를 눌러주세요" />
       <div style={{overflow: 'auto', display: 'flex', width: '100vw', gap: '0.4rem'}}>
-        <MartButton type="emart" title="이마트" />
-        <MartButton type="traders" title="트레이더스" subTitle="이마트" />
-        <MartButton type="homeplus" title="홈플러스" />
-        <MartButton type="costco" title="코스트코" />
-        <MartButton type="emart-everyday" title="에브리데이" subTitle="이마트" />
+        <MartButton type="emart" title="이마트" canClick={true} />
+        <MartButton type="traders" title="트레이더스" subTitle="이마트" canClick={true} />
+        <MartButton type="homeplus" title="홈플러스" canClick={true} />
+        <MartButton type="costco" title="코스트코" canClick={true} />
+        <MartButton type="emart-everyday" title="에브리데이" subTitle="이마트" canClick={true} />
       </div>
       <TitleHeader title="마트의 위치를 찾아주세요" />
       <MartSearch />

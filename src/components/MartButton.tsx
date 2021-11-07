@@ -5,12 +5,13 @@ interface Props {
   type: "emart" | "traders" | "homeplus" | "costco" | "emart-everyday";
   title: string;
   subTitle?: string;
+  canClick?: boolean;
   clicked?: boolean;
 }
 
-export default function MartButton({ type, title, subTitle, clicked }: Props) {
+export default function MartButton({ type, title, subTitle, canClick, clicked }: Props) {
   return (
-    <Button className={`mart-button ${type} ${clicked ? "clicked" : ""}`} onClick={onClick}>
+    <Button className={`mart-button ${type} ${clicked ? "clicked" : ""}`} onClick={canClick ? onClick : undefined}>
         <Title>{title}</Title>
         <SubTitle>{subTitle}</SubTitle>
     </Button>
