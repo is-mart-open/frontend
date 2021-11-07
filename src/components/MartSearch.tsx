@@ -1,6 +1,6 @@
 import { styled } from "@compiled/react";
 import axios from "axios";
-import { getRegExp } from "korean-regexp";
+import { getRegExp, engToKor } from "korean-regexp";
 import { useEffect, useState } from "react";
 
 interface SearchResult {
@@ -23,7 +23,7 @@ export default function MartSearch() {
   }, []);
 
   useEffect(() => {
-    const regex = getRegExp(keyword);
+    const regex = getRegExp(engToKor(keyword));
     setSearchResult(
       martList
         .map((value) => {
