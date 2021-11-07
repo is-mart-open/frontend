@@ -3,6 +3,7 @@ import Header from './components/Header'
 import TitleHeader from './components/TitleHeader'
 import { styled } from '@compiled/react'
 import 'dayjs/locale/ko'
+import MartSearch from './components/MartSearch'
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <MartButton type="emart-everyday" title="에브리데이" subTitle="이마트" />
       </div>
       <TitleHeader title="마트의 위치를 찾아주세요" />
+      <MartSearch />
     </Container>
   )
 }
