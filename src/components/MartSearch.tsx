@@ -23,7 +23,7 @@ export default function MartSearch() {
   }, []);
 
   useEffect(() => {
-    const regex = getRegExp(engToKor(keyword));
+    const regex = getRegExp(engToKor(keyword), { initialSearch: true });
     setSearchResult(
       martList
         .map((value) => {
