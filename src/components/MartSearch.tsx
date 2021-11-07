@@ -42,8 +42,6 @@ export default function MartSearch() {
     );
   }, [martList, keyword]);
 
-  
-
   return (
     <>
       <InputField type="text" onChange={(e) => { setKeyword((e.target as HTMLInputElement).value) }} />
@@ -61,6 +59,8 @@ export default function MartSearch() {
 }
 
 const InputField = styled.input`
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
   padding: 0.5rem;
   font-size: 1.25rem;
 `;
@@ -68,6 +68,16 @@ const InputField = styled.input`
 const SearchResult = styled.ul`
   list-style: none;
   padding-left: 0;
+  background-color: white;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  color: #888888;
+  border-radius: 0.75rem;
+
+  & li {
+    font-size: 1.2rem;
+    padding: 0.75rem;
+  }
 
   & strong {
     color: red;
