@@ -49,7 +49,7 @@ export default function MartSearch() {
       <InputField type="text" onChange={(e) => { setKeyword((e.target as HTMLInputElement).value) }} />
       <SearchResult>
         {searchResult
-          .map(({isMatched, index, input, matched}) => {
+          .map(({index, input, matched}) => {
             if (matched.length > 0) {
               return <li key={input}>{input.substring(0, index)}<strong>{matched}</strong>{input.substring(index + matched.length, input.length)}</li>
             }
