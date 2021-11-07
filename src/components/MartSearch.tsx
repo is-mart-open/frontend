@@ -50,7 +50,6 @@ export default function MartSearch() {
       <SearchResult>
         {searchResult
           .map(({isMatched, index, input, matched}) => {
-            console.log(`isMatched: ${isMatched}, index: ${index}, input: ${input}, matched: ${matched}`)
             if (matched.length > 0) {
               return <li key={input}>{input.substring(0, index)}<strong>{matched}</strong>{input.substring(index + matched.length, input.length)}</li>
             }
