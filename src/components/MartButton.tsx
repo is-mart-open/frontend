@@ -5,10 +5,9 @@ interface Props {
   type: "emart" | "traders" | "homeplus" | "costco" | "emart-everyday";
   title: string;
   subTitle?: string;
-  canClick?: boolean;
 }
 
-export default function MartButton({ type, title, subTitle, canClick }: Props) {
+export default function MartButton({ type, title, subTitle }: Props) {
   return (
     <Button className={`mart-button ${type}`}>
         <Title>{title}</Title>
