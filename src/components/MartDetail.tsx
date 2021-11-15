@@ -34,6 +34,7 @@ const Container = styled.div`
   flex: 1;
   background-color: #F5F5F5;
   border-radius: 0.75rem;
+  box-shadow: 2px 2px 8px rgb(0 0 0 / 15%);
 `;
 
 const Information = styled.div`
