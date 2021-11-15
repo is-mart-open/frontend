@@ -76,9 +76,14 @@ export default function LocationList() {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   gap: 0.625rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  height: 50%;
+  height: 100%;
   overflow-y: auto;
+
+  & > div {
+    flex-grow: 0;
+  }
 `;
