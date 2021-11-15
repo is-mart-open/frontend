@@ -59,7 +59,7 @@ export default function MartSearch() {
               }
               return <li key={input}><span>{input}</span> <MdArrowForward /></li>
             })
-          : <li><span>검색 결과가 없어요.</span></li>
+          : <li><span>검색 결과가 없어요</span></li>
         }
       </SearchResult>
     </>
