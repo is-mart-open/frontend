@@ -16,7 +16,7 @@ export default function MartSearch() {
   const [searchResult, setSearchResult] = useState([] as SearchResult[]);
 
   useEffect(() => {
-    axios.get("https://is-mart-open-api.btry.dev/marts")
+    axios.get("https://is-mart-open-api.btry.dev/mart/list")
       .then((response) => {
         setMartList(response.data.result);
       });
@@ -63,6 +63,9 @@ const InputField = styled.input`
   margin-right: 1.5rem;
   padding: 0.5rem;
   font-size: 1.25rem;
+  background-color: white;
+  border: 0.5px solid #E0E0E0;
+  border-radius: 14px;
 `;
 
 const SearchResult = styled.ul`
