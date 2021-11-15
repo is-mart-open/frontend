@@ -39,13 +39,13 @@ const Container = styled.div`
 const Information = styled.div`
   flex-direction: column;
   align-self: center;
-  margin-left: 0.5rem;
+  margin-left: 0.625rem;
 
   & > h2 {
     margin: 0;
     font-size: 1.25rem;
     color: #606060;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
 
     & span:nth-child(1) {
       font-weight: bold;
@@ -69,9 +69,4 @@ const Information = styled.div`
     font-size: 0.8rem;
     font-weight: normal;
   }
-`;
-
-const WrapBreak = styled.div`
-  flex-basis: 100%;
-  height: 0;
 `;
