@@ -44,7 +44,9 @@ export default function MartSearch() {
 
   return (
     <>
-      <InputField type="text" onChange={(e) => { setKeyword((e.target as HTMLInputElement).value.trim()) }} />
+      <InputField>
+        <input type="text" onChange={(e) => { setKeyword((e.target as HTMLInputElement).value.trim()) }} />
+      </InputField>
       <SearchResult>
         {searchResult
           .map(({index, input, matched}) => {
@@ -58,14 +60,25 @@ export default function MartSearch() {
   );
 }
 
-const InputField = styled.input`
+const InputField = styled.div`
   margin-left: 1.5rem;
   margin-right: 1.5rem;
   padding: 0.5rem;
-  font-size: 1.25rem;
+  
   background-color: white;
-  border: 0.5px solid #E0E0E0;
-  border-radius: 14px;
+  border: 0.1rem solid #E0E0E0;
+  border-radius: 0.75rem;
+
+  & input {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 1.25rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
 `;
 
 const SearchResult = styled.ul`
