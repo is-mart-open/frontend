@@ -9,11 +9,33 @@ interface Props {
 
 export default function MartButton({ type, title, subTitle }: Props) {
   return (
-    <Button className={`mart-button ${type}`}>
+    <Button className={`mart-button ${type}`} onClick={onClick}>
         <Title>{title}</Title>
         <SubTitle>{subTitle}</SubTitle>
     </Button>
   );
+}
+
+const onClick = () => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(onSuccessGeoLocation, onFailureGeoLocation);
+  } else {
+    alert("브라우저 위치 검색이 지원되지 않아요.");
+  }
+}
+
+const onSuccessGeoLocation = (position: GeolocationPosition) => {
+  alert(`lat: ${position.coords.latitude}, lon: ${position.coords.longitude}`);
+}
+
+const onFailureGeoLocation = (error: GeolocationPositionError) => {
+  if (error.code == error.PERMISSION_DENIED) {
+    alert("위치 권한이 꺼져있어요.\n권한을 허용하거나 위치 서비스를 사용하고 다시 시도해주세요.");
+  } else if (error.code == error.POSITION_UNAVAILABLE) {
+    alert("위치 권한이 꺼져있어요.\n위치 서비스를 사용하고 다시 시도해주세요.");
+  } else if (error.code == error.TIMEOUT) {
+    alert("시간이 초과됐어요. 다시 시도해주세요.");
+  }
 }
 
 const Button = styled.div`
