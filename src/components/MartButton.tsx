@@ -45,6 +45,12 @@ const Button = styled.div`
   background-blend-mode: soft-light;
   background-position: 100% 100%;
 
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  -o-user-select: none;
+  user-select: none;
+
   &.emart {
     background-image: url("/logos/emart.svg"),
       linear-gradient(180deg, #FED681 0%, rgba(254, 206, 103, 0.99) 100%);
