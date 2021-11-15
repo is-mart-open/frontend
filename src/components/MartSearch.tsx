@@ -16,7 +16,7 @@ export default function MartSearch() {
   const [searchResult, setSearchResult] = useState([] as SearchResult[]);
 
   useEffect(() => {
-    axios.get("https://is-mart-open-api.btry.dev/search/emart")
+    axios.get("https://is-mart-open-api.btry.dev/marts")
       .then((response) => {
         setMartList(response.data.result);
       });
