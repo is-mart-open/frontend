@@ -15,6 +15,8 @@ export default function App() {
     <Container>
       <Header/>
 
+      <TitleHeader title="마트의 위치를 찾아주세요" />
+
       <button onClick={() => setOpenedPane("search")}>검색 버튼</button>
       <button onClick={() => {
         setOpenedPane("location");
