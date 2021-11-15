@@ -10,23 +10,11 @@ interface Props {
 
 export default function MartButton({ type, title, subTitle, canClick }: Props) {
   return (
-    <Button className={`mart-button ${type}`} onClick={canClick ? onClick : undefined}>
+    <Button className={`mart-button ${type}`}>
         <Title>{title}</Title>
         <SubTitle>{subTitle}</SubTitle>
     </Button>
   );
-}
-
-const onClick = (event: React.MouseEvent<HTMLDivElement>) => {
-  document.querySelectorAll(".mart-button").forEach((element) => {
-    element.classList.remove("clicked");
-  });
-  console.log((event.target as Element).tagName);
-  if ((event.target as Element).tagName == "DIV") {
-    (event.target as Element).classList.add("clicked");
-  } else {
-    (event.target as Element).parentElement?.classList.add("clicked");
-  }
 }
 
 const Button = styled.div`
