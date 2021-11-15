@@ -44,7 +44,7 @@ export default function MartSearch() {
 
   return (
     <>
-      <InputField type="text" onChange={(e) => { setKeyword((e.target as HTMLInputElement).value) }} />
+      <InputField type="text" onChange={(e) => { setKeyword((e.target as HTMLInputElement).value.trim()) }} />
       <SearchResult>
         {searchResult
           .map(({index, input, matched}) => {
@@ -80,6 +80,6 @@ const SearchResult = styled.ul`
   }
 
   & strong {
-    color: red;
+    color: black;
   }
 `;
