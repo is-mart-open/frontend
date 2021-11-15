@@ -3,10 +3,11 @@ import TitleHeader from './components/TitleHeader'
 import { styled } from '@compiled/react'
 import 'dayjs/locale/ko'
 import MartSearch from './components/MartSearch'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import SlidingPane from "react-sliding-pane";
 
 import "./slide-pane.css";
+import LocationList from './components/LocationList'
 
 export default function App() {
   const [openedPane, setOpenedPane] = useState<"search"|"location"|null>(null);
@@ -20,7 +21,6 @@ export default function App() {
       <button onClick={() => setOpenedPane("search")}>검색 버튼</button>
       <button onClick={() => {
         setOpenedPane("location");
-        requestGeoLocation();
       }}>위치 버튼</button>
 
       <SlidingPane
@@ -43,32 +43,13 @@ export default function App() {
         from="bottom"
         onRequestClose={() => setOpenedPane(null)}
       >
-        <div>GeoLocation</div>
+        <Container>
+          <TitleHeader title="10km 이내 가까운 마트 목록이에요" />
+          <LocationList />
+        </Container>
       </SlidingPane>
     </Container>
   )
-}
-
-const requestGeoLocation = () => {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(onSuccessGeoLocation, onFailureGeoLocation);
-  } else {
-    alert("브라우저 위치 검색이 지원되지 않아요.");
-  }
-}
-
-const onSuccessGeoLocation = (position: GeolocationPosition) => {
-  alert(`lat: ${position.coords.latitude}, lon: ${position.coords.longitude}`);
-}
-
-const onFailureGeoLocation = (error: GeolocationPositionError) => {
-  if (error.code == error.PERMISSION_DENIED) {
-    alert("위치 권한이 꺼져있어요.\n권한을 허용하거나 위치 서비스를 사용하고 다시 시도해주세요.");
-  } else if (error.code == error.POSITION_UNAVAILABLE) {
-    alert("위치 권한이 꺼져있어요.\n위치 서비스를 사용하고 다시 시도해주세요.");
-  } else if (error.code == error.TIMEOUT) {
-    alert("시간이 초과됐어요. 다시 시도해주세요.");
-  }
 }
 
 const Container = styled.div`

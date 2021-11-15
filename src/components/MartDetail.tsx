@@ -1,6 +1,7 @@
 import { styled } from '@compiled/react';
 import MartButton from './MartButton'
 import { MdSchedule } from "react-icons/md";
+import { RiRoadMapLine } from "react-icons/ri";
 
 interface Props {
   type: "emart" | "traders" | "homeplus" | "costco" | "emart-everyday";
@@ -9,9 +10,10 @@ interface Props {
   name: string;
   status: string;
   time: string;
+  distance?: number;
 }
 
-export default function MartDetail({ type, title, subTitle, name, status, time }: Props) {
+export default function MartDetail({ type, title, subTitle, name, status, time, distance }: Props) {
   return (
     <Container>
         <MartButton type={type} title={title} subTitle={subTitle} />
@@ -22,6 +24,9 @@ export default function MartDetail({ type, title, subTitle, name, status, time }
               <span className="font-black text-green-300">{status}</span>
           </h2>
           <h3>
+            {
+              distance && <><RiRoadMapLine />&nbsp;{(distance! / 1000).toFixed(2)}km&nbsp;&nbsp;</>
+            }
             <MdSchedule />&nbsp;{time}
           </h3>
         </Information>
