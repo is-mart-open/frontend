@@ -6,12 +6,11 @@ interface Props {
   title: string;
   subTitle?: string;
   canClick?: boolean;
-  clicked?: boolean;
 }
 
-export default function MartButton({ type, title, subTitle, canClick, clicked }: Props) {
+export default function MartButton({ type, title, subTitle, canClick }: Props) {
   return (
-    <Button className={`mart-button ${type} ${clicked ? "clicked" : ""}`} onClick={canClick ? onClick : undefined}>
+    <Button className={`mart-button ${type}`} onClick={canClick ? onClick : undefined}>
         <Title>{title}</Title>
         <SubTitle>{subTitle}</SubTitle>
     </Button>
@@ -73,10 +72,6 @@ const Button = styled.div`
     background-image: url("/logos/emart_everyday.svg");
     background-color: #ADAFB8;
     background-size: 57px;
-  }
-
-  &.clicked {
-    border: 3px solid black;
   }
 `;
 
