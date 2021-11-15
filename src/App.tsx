@@ -24,6 +24,7 @@ export default function App() {
 }
 
 const Container = styled.div`
-  background-color: #F5F5F5;
   height: 100vh;
+  max-width: 768px;
+  margin: auto;
 `;
