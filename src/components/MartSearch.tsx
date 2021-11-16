@@ -111,6 +111,8 @@ const SearchResult = styled.ul`
   border-top: 0;
   border-bottom-left-radius: 0.75rem;
   border-bottom-right-radius: 0.75rem;
+  overflow-y: auto;
+  max-height: 60%;
 
   & li {
     display: flex;
@@ -118,6 +120,10 @@ const SearchResult = styled.ul`
 
     font-size: 1.2rem;
     padding: 0.75rem;
+
+    &:hover {
+      background-color: #EEEEEE;
+    }
 
     & svg {
       color: #888888;
