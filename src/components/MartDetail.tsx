@@ -5,18 +5,16 @@ import { RiRoadMapLine } from "react-icons/ri";
 
 interface Props {
   type: "emart" | "traders" | "homeplus" | "costco" | "emart-everyday";
-  title: string;
-  subTitle: string;
   name: string;
   status: string;
   time: string;
   distance?: number;
 }
 
-export default function MartDetail({ type, title, subTitle, name, status, time, distance }: Props) {
+export default function MartDetail({ type, name, status, time, distance }: Props) {
   return (
     <Container>
-        <MartButton type={type} title={title} subTitle={subTitle} />
+        <MartButton type={type} />
         <Information>
           <h2>
               <span className="font-bold">{name}</span>

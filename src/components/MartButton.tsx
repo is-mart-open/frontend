@@ -3,11 +3,31 @@ import { styled } from "@compiled/react";
 
 interface Props {
   type: "emart" | "traders" | "homeplus" | "costco" | "emart-everyday";
-  title: string;
-  subTitle?: string;
 }
 
-export default function MartButton({ type, title, subTitle }: Props) {
+export default function MartButton({ type }: Props) {
+  let title = "";
+  let subTitle = "";
+
+  switch (type) {
+    case "emart":
+      title = "이마트";
+      break;
+    case "traders":
+      title = "트레이더스";
+      subTitle = "이마트";
+      break;
+    case "homeplus":
+      title = "홈플러스";
+      break;
+    case "costco":
+      title = "코스트코";
+      break;
+    case "emart-everyday":
+      title = "에브리데이";
+      subTitle = "이마트";
+      break;
+  }
   return (
     <Button className={`mart-button ${type}`}>
         <Title>{title}</Title>
