@@ -28,25 +28,27 @@ export default function RecentList({ value }: Props) {
   }, []);
 
   return (
-    <Container>
+    <>
       <TitleHeader title="찾아본 마트 목록이에요" />
-      <ul>
-      {searchResult.map((value) => {
-        let type: "traders" | "emart" | "homeplus" | "costco" | "emart-everyday" = "emart"; 
-        if (value.name.includes("이마트 트레이더스")) {
-          type = "traders"
-        } else {
-          type = "emart"
-        }
-
-        let name = value.name;
-        name = name.replace("이마트 트레이더스", "");
-        name = name.replace("이마트", "");
-
-        return <li key={value.name}><MartDetail type={type} name={name} start_time={value.start_time} end_time={value.end_time} distance={value.distance} /></li>
-      })}
-      </ul>
-    </Container>
+      <Container>
+        <ul>
+        {searchResult.map((value) => {
+          let type: "traders" | "emart" | "homeplus" | "costco" | "emart-everyday" = "emart"; 
+          if (value.name.includes("이마트 트레이더스")) {
+            type = "traders"
+          } else {
+            type = "emart"
+          }
+          
+          let name = value.name;
+          name = name.replace("이마트 트레이더스", "");
+          name = name.replace("이마트", "");
+          
+          return <li key={value.name}><MartDetail type={type} name={name} start_time={value.start_time} end_time={value.end_time} distance={value.distance} /></li>
+        })}
+        </ul>
+      </Container>
+    </>
   );
 }
 

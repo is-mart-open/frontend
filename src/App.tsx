@@ -13,12 +13,8 @@ import RecentList from './components/RecentList'
 
 export default function App() {
   const [openedPane, setOpenedPane] = useState<"search"|"location"|null>(null);
-  const [cookie, setCookie] = useCookies(["recent"]);
+  const [cookie] = useCookies(["recent"]);
   const recentCookie = ((cookie.recent ?? []) as string[]);
-
-  useEffect(() => {
-    recentCookie.join(",");
-  }, [cookie]);
 
   return (
     <Container>
