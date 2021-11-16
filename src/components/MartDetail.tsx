@@ -23,7 +23,7 @@ export default function MartDetail({ type, name, start_time, end_time, distance 
           </h2>
           <h3>
             {
-              distance && <><RiRoadMapLine />&nbsp;{(distance! / 1000).toFixed(2)}km&nbsp;&nbsp;</>
+              distance && <><RiRoadMapLine />&nbsp;{(distance! / 1000).toFixed(1)}km&nbsp;&nbsp;</>
             }
             <MdSchedule />&nbsp;{start_time} ~ {end_time}
           </h3>
