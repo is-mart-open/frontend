@@ -3,14 +3,22 @@ import TitleHeader from './components/TitleHeader'
 import { styled } from '@compiled/react'
 import 'dayjs/locale/ko'
 import MartSearch from './components/MartSearch'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import SlidingPane from "react-sliding-pane";
 
 import "./slide-pane.css";
 import LocationList from './components/LocationList'
+import { useCookies } from 'react-cookie'
+import RecentList from './components/RecentList'
 
 export default function App() {
   const [openedPane, setOpenedPane] = useState<"search"|"location"|null>(null);
+  const [cookie, setCookie] = useCookies(["recent"]);
+  const recentCookie = ((cookie.recent ?? []) as string[]);
+
+  useEffect(() => {
+    recentCookie.join(",");
+  }, [cookie]);
 
   return (
     <Container>
@@ -22,6 +30,8 @@ export default function App() {
       <button onClick={() => {
         setOpenedPane("location");
       }}>위치 버튼</button>
+
+      {recentCookie.length > 0 && <RecentList value={recentCookie}/>}
 
       <SlidingPane
         isOpen={openedPane === "search"}
