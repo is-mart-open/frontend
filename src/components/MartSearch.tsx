@@ -1,7 +1,8 @@
 import { styled } from "@compiled/react";
 import axios from "axios";
 import { getRegExp, engToKor } from "korean-regexp";
-import { useEffect, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
+import { useCookies } from "react-cookie";
 import { MdSearch, MdArrowForward } from "react-icons/md";
 
 interface SearchResult {
@@ -15,6 +16,7 @@ export default function MartSearch() {
   const [keyword, setKeyword] = useState("");
   const [martList, setMartList] = useState([""]);
   const [searchResult, setSearchResult] = useState([] as SearchResult[]);
+  const [cookie, setCookie] = useCookies(["recent"]);
 
   useEffect(() => {
     axios.get("https://is-mart-open-api.btry.dev/mart/list")
@@ -43,6 +45,14 @@ export default function MartSearch() {
     );
   }, [martList, keyword]);
 
+  const onClick = (e: MouseEvent<HTMLLIElement>) => {
+    const name = (e.target as HTMLLIElement).getAttribute("id") ?? "";
+    let cookieResult: string[] = cookie.recent ?? [];
+    cookieResult = cookieResult.filter((value) => value.length != 0 && value !== name);
+    cookieResult.push(name);
+    setCookie("recent", cookieResult);
+  }
+
   return (
     <>
       <InputField>
@@ -55,9 +65,9 @@ export default function MartSearch() {
           ? searchResult
             .map(({index, input, matched}) => {
               if (matched.length > 0) {
-                return <li key={input}><span>{input.substring(0, index)}<strong>{matched}</strong>{input.substring(index + matched.length, input.length)}</span> <MdArrowForward /></li>
+                return <li key={input} id={input} onClick={onClick}><span>{input.substring(0, index)}<strong>{matched}</strong>{input.substring(index + matched.length, input.length)}</span> <MdArrowForward /></li>
               }
-              return <li key={input}><span>{input}</span> <MdArrowForward /></li>
+              return <li key={input} id={input} onClick={onClick}><span>{input}</span> <MdArrowForward /></li>
             })
           : <li><span>검색 결과가 없어요</span></li>
         }
