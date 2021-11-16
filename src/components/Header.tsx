@@ -17,7 +17,7 @@ export default function Header() {
 
   return (
     <Title>
-        <h1>오늘 마트 여나요?</h1>
+        <h1>오늘 마트 영업하나요?</h1>
         <p><MdSchedule />&nbsp;{time}</p>
     </Title>
   );
