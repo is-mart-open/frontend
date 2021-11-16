@@ -13,7 +13,7 @@ interface Props {
 }
 
 export default function MartDetail({ type, name, start_time, end_time, distance }: Props) {
-  const now = dayjs(Date.now());
+  const now = dayjs();
   const start = dayjs(start_time);
   const end = dayjs(end_time);
   let status = "";
@@ -43,7 +43,7 @@ export default function MartDetail({ type, name, start_time, end_time, distance 
             {
               distance && <><RiRoadMapLine />&nbsp;{(distance! / 1000).toFixed(1)}km&nbsp;&nbsp;</>
             }
-            <MdSchedule />&nbsp;{start_time} ~ {end_time}
+            <MdSchedule />&nbsp;{start.format("A hh:mm")} ~ {end.format("A hh:mm")}
           </h3>
         </Information>
     </Container>

@@ -5,7 +5,7 @@ import { MdSchedule } from "react-icons/md";
 
 export default function Header() {
   const calculateTime = () => {
-    return dayjs(new Date()).format("DD일(ddd) A hh:mm");
+    return dayjs().format("DD일(ddd) A hh:mm");
   }
 
   const [time, setTime] = useState(calculateTime());
