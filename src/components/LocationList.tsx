@@ -59,7 +59,7 @@ export default function LocationList() {
         name = name.replace("이마트 트레이더스", "");
         name = name.replace("이마트", "");
 
-        return <li><MartDetail key={value.name} type={type} name={name} start_time={value.start_time} end_time={value.end_time} distance={value.distance} /></li>
+        return <li key={value.name}><MartDetail type={type} name={name} start_time={value.start_time} end_time={value.end_time} distance={value.distance} /></li>
       })}
       </ul>
     </Container>
