@@ -10,6 +10,8 @@ import "./slide-pane.css";
 import LocationList from './components/LocationList'
 import { useCookies } from 'react-cookie'
 import RecentList from './components/RecentList'
+import MartSearchButton from './components/buttons/MartSearchButton'
+import MartLocationButton from './components/buttons/MartLocatonButton'
 
 export default function App() {
   const [openedPane, setOpenedPane] = useState<"search"|"location"|null>(null);
@@ -22,10 +24,10 @@ export default function App() {
 
       <TitleHeader title="마트의 위치를 찾아주세요" />
 
-      <button onClick={() => setOpenedPane("search")}>검색 버튼</button>
-      <button onClick={() => {
-        setOpenedPane("location");
-      }}>위치 버튼</button>
+      <SearchButtons>
+        <MartSearchButton onClick={() => setOpenedPane("search")} />
+        <MartLocationButton onClick={() => setOpenedPane("location")} />
+      </SearchButtons>
 
       {recentCookie.length > 0 && <RecentList value={recentCookie}/>}
 
@@ -62,6 +64,14 @@ const Container = styled.div`
   height: 100vh;
   max-width: 768px;
   margin: auto;
+`;
+
+const SearchButtons = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 `;
 
 const PaneCloseIcon = styled.div`
