@@ -6,26 +6,26 @@ import { RiRoadMapLine } from "react-icons/ri";
 interface Props {
   type: "emart" | "traders" | "homeplus" | "costco" | "emart-everyday";
   name: string;
-  status: string;
-  time: string;
+  start_time: Date;
+  end_time: Date;
   distance?: number;
 }
 
-export default function MartDetail({ type, name, status, time, distance }: Props) {
+export default function MartDetail({ type, name, start_time, end_time, distance }: Props) {
   return (
     <Container>
         <MartButton type={type} />
         <Information>
           <h2>
-              <span className="font-bold">{name}</span>
-              <span className="font-regular">은 </span>
-              <span className="font-black text-green-300">{status}</span>
+              <span>{name}</span>
+              <span>은 </span>
+              <span>영업시작전</span>
           </h2>
           <h3>
             {
               distance && <><RiRoadMapLine />&nbsp;{(distance! / 1000).toFixed(2)}km&nbsp;&nbsp;</>
             }
-            <MdSchedule />&nbsp;{time}
+            <MdSchedule />&nbsp;{start_time} ~ {end_time}
           </h3>
         </Information>
     </Container>

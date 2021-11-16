@@ -6,8 +6,8 @@ import MartDetail from "./MartDetail";
 interface SearchResult {
   base_date: string,
   name: string,
-  start_time: string,
-  end_time: string,
+  start_time: Date,
+  end_time: Date,
   next_holiday: string | undefined,
   distance: number,
 }
@@ -55,18 +55,11 @@ export default function LocationList() {
           type = "emart"
         }
 
-        let title: string = "이마트";
-        let subTitle: string = "";
-        if (type == "traders") {
-          title = "트레이더스"
-          subTitle = "이마트"
-        }
-
         let name = value.name;
         name = name.replace("이마트 트레이더스", "");
         name = name.replace("이마트", "");
 
-        return <li><MartDetail key={value.name} type={type} title={title} subTitle={subTitle} name={name} status={"영업시작전"} time={`${value.start_time} ~ ${value.end_time}`} distance={value.distance} /></li>
+        return <li><MartDetail key={value.name} type={type} name={name} start_time={value.start_time} end_time={value.end_time} distance={value.distance} /></li>
       })}
       </ul>
     </Container>
