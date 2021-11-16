@@ -14,8 +14,8 @@ interface Props {
 
 export default function MartDetail({ type, name, start_time, end_time, distance }: Props) {
   const now = dayjs();
-  const start = dayjs(start_time);
-  const end = dayjs(end_time);
+  const start = dayjs(start_time, "HH:mm");
+  const end = dayjs(end_time, "HH:mm");
   let status = "";
   let color = "";
 
