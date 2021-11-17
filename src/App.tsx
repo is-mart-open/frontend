@@ -61,7 +61,6 @@ export default function App() {
 }
 
 const Container = styled.div`
-  height: 100vh;
   max-width: 768px;
   margin: auto;
 `;
