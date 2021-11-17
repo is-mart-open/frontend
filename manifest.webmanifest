@@ -1,1 +1,1 @@
-{"name":"오늘 마트 영업하나요?","short_name":"오늘 마트 영업하나요?","start_url":"/","display":"standalone","background_color":"#ffffff","lang":"en","scope":"/","description":"방문할 마트의 영업 유무를 알려드려요.","icons":[{"src":"icons/favicon.svg","sizes":"any"}]}
+{"name":"오늘 마트 영업하나요?","short_name":"오늘 마트 영업하나요?","start_url":"/","display":"standalone","background_color":"#ffffff","lang":"en","scope":"/","description":"방문할 마트의 영업 유무를 알려드려요.","icons":[{"src":"public/icons/favicon.svg","sizes":"any"}]}
