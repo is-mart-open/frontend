@@ -20,13 +20,13 @@ const Header = styled.div`
 
     span {
         padding-left: 0.4rem;
-        color: #888888;
+        color: #535353;
         font-weight: 500;
     }
 `;
 
 const HeaderIcon = styled.div`
-    border: 2px solid #888888;
+    border: 2px solid #535353;
     border-radius: 1rem;
     height: 0.4rem;
 `;

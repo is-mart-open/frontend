@@ -86,7 +86,7 @@ const Information = styled.div`
     display: flex;
     align-items: center;
     margin: 0;
-    color: #888888;
+    color: #535353;
     font-size: 0.8rem;
     font-weight: normal;
   }

@@ -103,7 +103,7 @@ const InputField = styled.div`
   }
 
   & svg {
-    color: #888888;
+    color: #535353;
     margin-left: auto;
     font-size: 1.25rem;
   }
@@ -116,7 +116,7 @@ const SearchResult = styled.ul`
   margin-top: 0;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
-  color: #888888;
+  color: #535353;
   border: 0.1rem solid #E0E0E0;
   border-top: 0;
   border-bottom-left-radius: 0.75rem;
@@ -136,7 +136,7 @@ const SearchResult = styled.ul`
     }
 
     & svg {
-      color: #888888;
+      color: #535353;
       margin-left: auto;
       font-size: 1.25rem;
     }

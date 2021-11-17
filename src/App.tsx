@@ -74,7 +74,7 @@ const SearchButtons = styled.div`
 `;
 
 const PaneCloseIcon = styled.div`
-    border: 2px solid #888888;
+    border: 2px solid #535353;
     border-radius: 1rem;
     width: 3rem;
 `;
