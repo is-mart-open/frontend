@@ -61,6 +61,7 @@ export default function App() {
 }
 
 const Container = styled.div`
+  height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
   max-width: 768px;
   margin: auto;
 `;
