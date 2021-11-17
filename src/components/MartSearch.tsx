@@ -122,7 +122,7 @@ const SearchResult = styled.ul`
   border-bottom-left-radius: 0.75rem;
   border-bottom-right-radius: 0.75rem;
   overflow-y: auto;
-  max-height: 60%;
+  max-height: calc(60vh - env(safe-area-inset-bottom));
 
   & li {
     display: flex;

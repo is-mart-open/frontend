@@ -4,7 +4,9 @@
   font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
 }
 
-html, body {
+body {
+  /* height: calc(100vh - env(safe-area-inset-top) - (env(safe-area-inset-bottom) * 2)); */
+  min-height: calc(100% + env(safe-area-inset-top));
   background-color: #F5F5F5;
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   margin: 0;
