@@ -3,7 +3,7 @@ import TitleHeader from './components/TitleHeader'
 import { styled } from '@compiled/react'
 import 'dayjs/locale/ko'
 import MartSearch from './components/MartSearch'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import SlidingPane from "react-sliding-pane";
 
 import "./slide-pane.css";
