@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import MartDetail from "./MartDetail";
 import TitleHeader from "./TitleHeader";
+import { apiEndpoint } from "../config/Resource"
 
 interface Props {
   value: string[],
@@ -21,7 +22,7 @@ export default function RecentList({ value }: Props) {
   const [searchResult, setSearchResult] = useState([] as SearchResult[]);
 
   useEffect(() => {
-    axios.get(`https://is-mart-open-api.btry.dev/mart/${value.join(",")}`)
+    axios.get(apiEndpoint + "/mart" + `/${value.join(",")}`)
       .then((response) => {
         setSearchResult(response.data as SearchResult[]);
       });

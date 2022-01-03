@@ -4,6 +4,7 @@ import { getRegExp, engToKor } from "korean-regexp";
 import { MouseEvent, useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import { MdSearch, MdArrowForward } from "react-icons/md";
+import { apiEndpoint } from "../config/Resource"
 
 interface SearchResult {
   isMatched: boolean,
@@ -19,7 +20,7 @@ export default function MartSearch() {
   const [cookie, setCookie] = useCookies(["recent"]);
 
   useEffect(() => {
-    axios.get("https://is-mart-open-api.btry.dev/mart/list")
+    axios.get(apiEndpoint + "/mart/list")
       .then((response) => {
         setMartList(response.data.result);
       });

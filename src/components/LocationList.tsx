@@ -2,6 +2,7 @@ import { styled } from "@compiled/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import MartDetail from "./MartDetail";
+import { apiEndpoint } from "../config/Resource"
 
 interface SearchResult {
   base_date: string,
@@ -38,7 +39,7 @@ export default function LocationList() {
 
   useEffect(() => {
     if (gps == null) return;
-    axios.get(`https://is-mart-open-api.btry.dev/mart/from-location?lat=${gps?.coords.latitude}&lon=${gps?.coords.longitude}`)
+    axios.get(apiEndpoint + "/mart/from-location" + `?lat=${gps?.coords.latitude}&lon=${gps?.coords.longitude}`)
       .then((response) => {
         setSearchResult(response.data.result as SearchResult[]);
       });

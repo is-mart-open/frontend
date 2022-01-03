@@ -1,0 +1,1 @@
+export const apiEndpoint = "https://is-mart-open-api.btry.dev"
